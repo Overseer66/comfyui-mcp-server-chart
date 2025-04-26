@@ -3,12 +3,12 @@ entries:
   mcp-comfyui-sse:
   - apiVersion: v2
     appVersion: latest
-    created: "2025-04-26T18:04:47.5677359+09:00"
+    created: "2025-04-26T18:06:02.4622847+09:00"
     description: Helm chart for overseer66/mcp-comfyui-sse
-    digest: f1a12c4ccc9fad56bd9235df08a1d64299fd1fb9d8c3a5b8fd6a4ff922ab88ce
+    digest: e663718b11388e6f3e3ec52398110df78144e5f513aedcd0b22279ea79bc9141
     name: mcp-comfyui-sse
     type: application
     urls:
     - mcp-comfyui-sse-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-26T18:04:47.5672179+09:00"
+generated: "2025-04-26T18:06:02.4617689+09:00"
