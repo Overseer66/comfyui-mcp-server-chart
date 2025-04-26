@@ -14,7 +14,7 @@ image:
 
 service:
   type: ClusterIP
-  port: 8080
+  port: 8000
 
 env:
   COMFYUI_HOST: "comfyui.comfyui.svc.cluster.local"
