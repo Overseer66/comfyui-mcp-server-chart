@@ -2,6 +2,13 @@
 
 Helm chart for ComfyUI SSE MCP server.
 
+## Using Helm
+```bash
+helm repo add mcp-comfyui https://overseer66.github.io/comfyui-mcp-server-chart/
+helm repo update
+helm search repo mcp-comfyui
+```
+
 ## Configuration (values.yaml)
 
 ### Basic Settings
