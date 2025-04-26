@@ -1,0 +1,23 @@
+replicaCount: 1
+
+image:
+  repository: overseer66/mcp-comfyui-sse
+  tag: latest
+  pullPolicy: Always
+  # imagePullSecrets:
+  #   name: pull-secret
+
+# secrets:
+#   imagePullSecrets:
+#     name: pull-secret
+#     dockerconfigjson:
+
+service:
+  type: ClusterIP
+  port: 8080
+
+env:
+  COMFYUI_HOST: "comfyui.comfyui.svc.cluster.local"
+  COMFYUI_PORT: "8188"
+  RETURN_URL: "true"
+  WORKFLOW_DIR: "workflows" 

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "mcp-comfyui-sse.fullname" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "mcp-comfyui-sse.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "mcp-comfyui-sse.name" . }}
+    spec:
+{{- if and .Values.image (hasKey .Values.image "imagePullSecrets") }}
+      imagePullSecrets:
+        - name: {{ .Values.image.imagePullSecrets.name }}
+{{- end }}
+      containers:
+        - name: mcp-comfyui-sse
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+{{- range $key, $value := .Values.env }}
+            - name: {{ $key }}
+              value: {{ $value | quote }}
+{{- end }}
+          ports:
+            - containerPort: {{ .Values.service.port }}
